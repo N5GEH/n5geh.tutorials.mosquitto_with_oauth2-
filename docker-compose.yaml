@@ -1,0 +1,13 @@
+  mosquitto:
+    restart: always
+    image: karltga/mosquitto-go-auth-oauth2:v1.2
+    hostname: mosquitto
+    container_name: mosquitto
+    ports:
+      - 8883:8883
+	  - 9001:9001
+    volumes:
+      - ./config/:/etc/mosquitto/
+      - /path/to/cafile:/etc/certs/cafile
+      - /path/to/cert:/etc/certs/cert
+      - /path/to/keyfile:/etc/certs/keyfile
